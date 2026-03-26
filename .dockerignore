@@ -1,0 +1,79 @@
+# ============================================
+# Docker构建忽略文件
+# 排除不需要的文件，减小构建上下文和镜像体积
+# ============================================
+
+# 版本控制
+.git
+.gitignore
+.gitattributes
+
+# IDE和编辑器
+.idea
+.vscode
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 文档
+README.md
+CHANGELOG.md
+LICENSE
+*.md
+
+# 测试文件
+*_test.go
+/test
+/tests
+/coverage
+*.cover
+*.out
+
+# CI/CD配置
+.github
+.gitlab-ci.yml
+.travis.yml
+Jenkinsfile
+
+# 本地开发文件
+.env
+.env.local
+.env.*.local
+*.log
+/tmp
+/temp
+
+# 构建产物（避免重复复制）
+/server
+/ai-assistant
+/ai90
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Docker相关（自身不需要）
+Dockerfile*
+.dockerignore
+docker-compose*.yml
+
+# Kubernetes配置（可选，如果需要打包则注释掉）
+/k8s
+*.yaml
+*.yml
+
+# 工具脚本和临时文件
+/scripts
+*.sh
+*.bat
+Makefile
+
+# 依赖缓存（已在builder阶段处理）
+/vendor
+
+# 其他
+*.md
+*.txt
+!go.mod
+!go.sum

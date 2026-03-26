@@ -1,0 +1,36 @@
+# 忽略二进制文件
+*.exe
+*.dll
+*.so
+*.bin
+*.o
+*.a
+*.lib
+*.out
+
+# 忽略 tar 压缩文件
+*.tar
+*.tar.gz
+*.tgz
+*.tar.bz2
+*.tar.xz
+*.zip
+*.rar
+*.7z
+
+# 常见需要忽略的文件
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 忽略目录
+node_modules/
+__pycache__/
+dist/
+build/
+target/
+.idea/
+.vscode/
