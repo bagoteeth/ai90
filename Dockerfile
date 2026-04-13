@@ -2,6 +2,8 @@
 # 构建阶段
 FROM golang:1.24-alpine AS builder
 
+RUN mkdir -p /app
+RUN mkdir -p /app/skills
 WORKDIR /app
 
 # 安装CA证书和时区数据（运行时必需）
@@ -12,7 +14,8 @@ RUN addgroup -g 1000 -S appgroup && \
     adduser -u 1000 -S appuser -G appgroup
 
 # 从构建阶段复制二进制文件
-COPY cmd/server/ai90 /app/ai90
+COPY target/ai90 /app/ai90
+COPY target/skills/*.md /app/skills/
 
 # 设置文件权限
 RUN chmod +x /app/ai90 && \

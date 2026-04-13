@@ -14,5 +14,5 @@ data:
   COLLECTION_NAME: "k8s_docs_zh"
 
   # 模型配置
-  MODEL_LLM: "qwen2:7b"
+  MODEL_LLM: "qwen2.5:32b"
   MODEL_EMBEDDING: "bge-m3"

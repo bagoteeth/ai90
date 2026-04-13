@@ -22,10 +22,10 @@ const (
 	ChromaURL        = "http://127.0.0.1:8000"
 	EmbeddingModel   = "bge-m3"
 	CollectionName   = "k8s_docs_zh"
-	DocRoot          = "/root/testai/kubernetes.io/zh-cn"
+	DocRoot          = "/root/testai/kubernetes.io/zh-cn/docs"
 	ChunkSize        = 500 // 每个chunk字符数
-	MaxChunksPerFile = 30  // 单文件最大chunk数（熔断阈值）
-	MaxTotalChunks   = 200 // 全局总chunk数上限（200*500=10万字）
+	MaxChunksPerFile = 50  // 单文件最大chunk数（熔断阈值）
+	MaxTotalChunks   = 99999999 // 全局总chunk数上限（200*500=10万字）
 )
 
 // 全局原子计数器，保证并发安全（即使单协程也用原子操作，避免竞态）

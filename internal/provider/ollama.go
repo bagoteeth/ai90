@@ -27,7 +27,7 @@ type GenerateResponse struct {
 	Response string `json:"response"`
 }
 
-var client = &http.Client{Timeout: 60 * time.Second}
+var client = &http.Client{Timeout: 600 * time.Second}
 
 func GetEmbedding(text string) ([]float32, error) {
 	reqBody, _ := json.Marshal(EmbeddingRequest{

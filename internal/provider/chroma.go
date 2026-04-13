@@ -99,43 +99,6 @@ func (c *ChromaClient) getOrCreateCollection() (string, error) {
 	}
 	return "", fmt.Errorf("no collection %s found\n", c.Collection)
 
-	// 2. 如果集合不存在，则报错
-	//payload, _ := json.Marshal(map[string]interface{}{
-	//	"name":          c.Collection,
-	//	"get_or_create": true,
-	//})
-	//
-	//resp, err = c.httpClient.Post(url, "application/json", bytes.NewBuffer(payload))
-	//if err != nil {
-	//	return "", fmt.Errorf("创建集合失败: %w", err)
-	//}
-	//defer resp.Body.Close()
-	//
-	//// 检查创建响应码
-	//if resp.StatusCode != http.StatusOK && resp.StatusCode != http.StatusCreated {
-	//	body, _ := io.ReadAll(resp.Body)
-	//	return "", fmt.Errorf("创建集合响应异常: 状态码%d, 内容: %s", resp.StatusCode, string(body))
-	//}
-	//
-	//// 读取响应体
-	//respBody, _ := io.ReadAll(resp.Body)
-	//
-	//// 解析响应获取集合 ID
-	//var res struct {
-	//	ID string `json:"id"`
-	//}
-	//
-	//// 兼容某些版本可能返回数组的情况
-	//if err := json.Unmarshal(respBody, &res); err != nil || res.ID == "" {
-	//	var resList []struct{ ID string `json:"id"` }
-	//	if err := json.Unmarshal(respBody, &resList); err == nil && len(resList) > 0 {
-	//		res.ID = resList[0].ID
-	//	} else {
-	//		return "", fmt.Errorf("解析创建集合响应失败: %w, 响应内容: %s", err, string(respBody))
-	//	}
-	//}
-	//
-	//return res.ID, nil
 }
 
 // Query 执行向量查询
