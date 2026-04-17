@@ -29,7 +29,7 @@ ENV PORT=8090 \
     OLLAMA_URL=http://ollama.default.svc.cluster.local:11434 \
     CHROMA_URL=http://chroma-service.default.svc.cluster.local:8000 \
     COLLECTION_NAME=k8s_docs_zh \
-    MODEL_LLM=qwen2:7b \
+    MODEL_LLM=qwen2.5:32b \
     MODEL_EMBEDDING=bge-m3 \
     LOG_LEVEL=info
 

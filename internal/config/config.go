@@ -41,7 +41,7 @@ func Load() *Config {
 			CollectionName: getEnv("COLLECTION_NAME", "k8s_docs_zh"),
 		},
 		Model: ModelConfig{
-			LLM:       getEnv("MODEL_LLM", "qwen2:7b"),
+			LLM:       getEnv("MODEL_LLM", "qwen2.5:32b"),
 			Embedding: getEnv("MODEL_EMBEDDING", "bge-m3"),
 		},
 	}
@@ -64,7 +64,7 @@ const (
 	ChromaURL = "http://chroma-service.default.svc.cluster.local:8000"
 
 	// 模型选型
-	ModelLLM       = "qwen2"
+	ModelLLM       = "qwen2.5:32b"
 	ModelEmbedding = "bge-m3"
 
 	// 向量库配置

@@ -5,7 +5,7 @@
 ## 概述
 
 - **核心功能**：基于 K8s 知识库的智能问答，结合向量检索 + LLM 生成
-- **本地 LLM**：使用 Ollama 运行 `qwen2:7b` 模型
+- **本地 LLM**：使用 Ollama 运行 `qwen2.5:32b` 模型
 - **向量存储**：使用 Chroma 存储 K8s 文档向量
 - **部署方式**：支持 K8s YAML 部署
 
@@ -105,7 +105,7 @@ kubectl logs -l app.kubernetes.io/name=ai90 -f
 curl -X POST http://<node>:31134/api/generate \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "qwen2:7b",
+    "model": "qwen2.5:32b",
     "prompt": "你好"
   }'
 ```
