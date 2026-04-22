@@ -36,3 +36,4 @@ target/
 .vscode/
 .claude/
 .agents/
+.env
